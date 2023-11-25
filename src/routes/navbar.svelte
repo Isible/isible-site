@@ -1,4 +1,5 @@
 <script>
+    import "../../static/style.css"
    import { page } from "$app/stores";
 
    const navs = [
@@ -13,6 +14,10 @@
     {
         title: "Contact",
         href: "/contact"
+    },
+    {
+        title: "Projects",
+        href: "/projects"
     },
    ];
 

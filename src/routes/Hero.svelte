@@ -10,7 +10,7 @@
 <style>
     .hero {
         padding: 5em 0;
-        background-color: plum;
+        background-color: var(--primary-color);
         color: darkblue;
     }
     h2 {
