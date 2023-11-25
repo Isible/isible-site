@@ -4,4 +4,3 @@
 </script>
 <Hero />
 <What />
-Home
