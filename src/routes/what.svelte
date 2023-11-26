@@ -1,3 +1,7 @@
+<script>
+    import Button from "$lib/button.svelte";
+</script>
+
 <div class="container grid">
     <div class="what">
         <h3>What we do</h3>
@@ -9,6 +13,7 @@
             projects in the project section. You can find both of them
             in the header of this site.
         </p>
+        <Button size = "medium">Go to about</Button>
     </div>
     <div class="contact">
         <h3>Contact Us</h3>
