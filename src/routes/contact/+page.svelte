@@ -55,7 +55,7 @@
                 placeholder="Please enter your message"
                 class="form-control"
                 rows="5"
-                value={form?.message || ""}
+                value={form?.message?.toString() || ""}
                 class:error={form && !form?.message}
                 />
             </div>
