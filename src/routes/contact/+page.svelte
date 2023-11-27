@@ -1,4 +1,5 @@
 <script>
+    import { enhance } from "$app/forms"
     import Button from "$lib/button.svelte"
 
     export let form
@@ -8,8 +9,13 @@
 
 <div class="container">
     <h2>Contact us</h2>
-    <p>{form?.message || ""}</p>
-    <form method="POST">
+
+    {#if form?.success}
+    <p>{form?.status || ""}</p>
+
+    {:else} 
+
+    <form method="POST" use:enhance>
         <div class="form-group">
             <label for="name" class="col-md-3 control-label">Name</label>
             <div class="col-md-9">
@@ -18,7 +24,10 @@
                 name="name"
                 id="name"
                 placeholder="Your name"
-                class="form-control"/>
+                class="form-control"
+                value={form?.name || ""}
+                class:error={form && !form?.name}
+                />
             </div>
         </div>
     
@@ -30,7 +39,10 @@
                 name="mail"
                 id="mail"
                 placeholder="Your E-mail"
-                class="form-control"/>
+                class="form-control"
+                value={form?.mail || ""}
+                class:error={form && !form?.mail}
+                />
             </div>
         </div>
     
@@ -41,8 +53,11 @@
                 name="message"
                 id="message"
                 placeholder="Please enter your message"
-            class="form-control"
-                rows="5"/>
+                class="form-control"
+                rows="5"
+                value={form?.message || ""}
+                class:error={form && !form?.message}
+                />
             </div>
         </div>
     
@@ -52,6 +67,7 @@
             </div>
         </div>
     </form>
+    {/if}
 </div>
 
 
@@ -76,5 +92,8 @@
     label {
         display: block;
         margin-bottom: 0.5em;
+    }
+    .error {
+        border: 1px solid red;
     }
 </style>

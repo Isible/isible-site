@@ -1,3 +1,5 @@
+import { fail } from '@sveltejs/kit'
+
 export const actions = {
     default: async({request}) => {
         const formData = await request.formData()
@@ -5,10 +7,21 @@ export const actions = {
         const mail = formData.get("mail")
         const message = formData.get("message")
 
-        // reminder: Add check system and functions
+        if (!name) {
+            return fail(400, {error: "name is missing", mail, message})
+        }
+
+        if (!mail) {
+            return fail(400, {error: "mail is missing", name, message})
+        }
+
+        if (!message) {
+            return fail(400, {error: "no message", name, mail})
+        }
         
         return {
-            message: "Form is submitted"
+            success: true,
+            status: "Form is submitted",
         }
     }
 }
