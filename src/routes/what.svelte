@@ -44,7 +44,7 @@
     }
     a {
         text-decoration: none;
-        color: black;
+        color: var(--color);
     }
     a:hover {
         text-decoration: underline;

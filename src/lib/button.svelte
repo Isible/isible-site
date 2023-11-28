@@ -15,7 +15,7 @@
         background-color: var(--primary-color);
         border: none;
         border-radius: 0.25em;
-        color: darkblue;
+        color: var(--text-color);
         font-size: 1em;
         cursor: pointer;
     }

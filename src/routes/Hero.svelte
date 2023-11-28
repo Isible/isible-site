@@ -11,7 +11,7 @@
     .hero {
         padding: 5em 0;
         background-color: var(--primary-color);
-        color: darkblue;
+        color: var(--text-color);
     }
     h2 {
         margin: 0;

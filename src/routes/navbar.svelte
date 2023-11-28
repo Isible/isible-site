@@ -1,6 +1,9 @@
 <script>
     import "../../static/style.css"
-   import { page } from "$app/stores";
+    import { page } from "$app/stores";
+    import { onMount } from "svelte";
+    import Moon from "./icons/moon.svelte";
+    import Sun from "./icons/sun.svelte";
 
    const navs = [
     {
@@ -21,6 +24,27 @@
     },
    ];
 
+   let currentTheme = "";
+
+    onMount(() => {
+        const userPrefDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+        ).matches;
+
+        const hasUserSetDarkMode = 
+            document.documentElement.dataset.theme == "dark";
+
+        if (!hasUserSetDarkMode) {
+            setTheme(userPrefDark ? "dark" : "light");
+        };
+    });
+
+   const setTheme = (theme) => {
+        document.documentElement.dataset.theme = theme;
+        document.cookie = `siteTheme=${theme}; max-age=31536000; path="/"`;
+        currentTheme = theme;
+   };
+
     $: routeId = $page.route.id;
 </script>
 
@@ -34,6 +58,17 @@
                 <a {href} class:active = {routeId == href} {title}>{title}</a>
             </li>
             {/each}
+            <li>
+                {#if currentTheme == "light"}
+                  <a class="moon" href={"#"} on:click={() => setTheme("dark")}>
+                    <Moon />
+                  </a>
+                {:else}
+                  <a class="sun" href={"#"} on:click={() => setTheme("light")}>
+                    <Sun />
+                  </a>
+                {/if}
+              </li>
         </ul>
     </div>
 </nav>
