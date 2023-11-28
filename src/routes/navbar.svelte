@@ -42,6 +42,7 @@
         };
     });
 
+   // @ts-ignore
    const setTheme = (theme) => {
         document.documentElement.dataset.theme = theme;
         document.cookie = `siteTheme=${theme}; max-age=31536000; path="/"`;
