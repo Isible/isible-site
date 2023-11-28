@@ -7,6 +7,8 @@ export const actions = {
         const mail = formData.get("mail")
         const message = formData.get("message")
 
+        //note: add data management here
+
         if (!name) {
             return fail(400, {error: "name is missing", mail, message})
         }

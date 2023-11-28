@@ -14,6 +14,7 @@
     <p>{form?.status || ""}</p>
 
     {:else} 
+    <p>{form?.error || ""}</p>
 
     <form method="POST" use:enhance>
         <div class="form-group">
