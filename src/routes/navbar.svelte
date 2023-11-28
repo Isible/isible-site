@@ -34,7 +34,10 @@
         const hasUserSetDarkMode = 
             document.documentElement.dataset.theme == "dark";
 
-        if (!hasUserSetDarkMode) {
+        const hasUserSetLightMode =
+        document.documentElement.dataset.theme == "light";
+
+        if (!hasUserSetDarkMode && !hasUserSetLightMode) {
             setTheme(userPrefDark ? "dark" : "light");
         };
     });
