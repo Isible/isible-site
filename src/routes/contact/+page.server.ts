@@ -24,6 +24,7 @@ export const actions = {
         return {
             success: true,
             status: "Form is submitted",
+            out: {name, mail, message}
         }
     }
 }
