@@ -13,13 +13,15 @@
             projects in the project section. You can find both of them
             in the header of this site.
         </p>
-        <Button size = "medium">Go to about</Button>
+        <Button size = "medium">
+            <a href = "/about">Go to about</a>
+        </Button>
     </div>
     <div class="contact">
         <h3>Contact Us</h3>
         <p><strong>Isible</strong></p>
-        <p>via <a href="https://www.github.com/Isible">Github</a></p>
-        <p>via <a href="https://discord.com/invite/nCa73qqv5Q">Discord</a></p>
+        <p>via <a class="con" href="https://www.github.com/Isible">Github</a></p>
+        <p>via <a class="con" href="https://discord.com/invite/nCa73qqv5Q">Discord</a></p>
     </div>
 </div>
 
@@ -42,11 +44,16 @@
         font-weight: 500;
         border-bottom: 1px solid #ddd;
     }
-    a {
+    .con {
         text-decoration: none;
         color: var(--color);
     }
-    a:hover {
+    .con:hover {
         text-decoration: underline;
+    }
+    a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1em;
     }
 </style>

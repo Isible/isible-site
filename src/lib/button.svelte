@@ -27,4 +27,5 @@
     .medium {
         padding: 0.5em 1.5em;
     }
+
 </style>
