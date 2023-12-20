@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
     export let name = "";
 
-    let userData;
+    let userData: any;
   
     async function fetchData() {
       try {

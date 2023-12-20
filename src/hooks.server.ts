@@ -1,6 +1,6 @@
-/** @type {import("@sveltejs/kit").Handle} */
+import type { Handle } from "@sveltejs/kit";
 
-export const handle = async({event, resolve}) => {
+export const handle: Handle = async({event, resolve}) => {
     const theme = event.cookies.get("siteTheme");
 
     const response = await resolve(event, {
