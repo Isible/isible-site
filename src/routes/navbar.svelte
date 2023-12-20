@@ -24,7 +24,7 @@
     },
   ];
 
-  let currentTheme;
+  let currentTheme = "";
 
   onMount(() => {
     const userPrefDark = window.matchMedia(
