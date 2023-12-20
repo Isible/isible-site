@@ -1,5 +1,5 @@
-<script>
-    export let size = "medium";
+<script lang="ts">
+    export let size: string = "medium";
 </script>
 
 <button
