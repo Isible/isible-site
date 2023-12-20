@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import "../../static/style.css";
   import { page } from "$app/stores";
   import { onMount } from "svelte";
@@ -24,7 +24,7 @@
     },
   ];
 
-  let currentTheme = "";
+  let currentTheme;
 
   onMount(() => {
     const userPrefDark = window.matchMedia(
