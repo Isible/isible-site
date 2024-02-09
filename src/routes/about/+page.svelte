@@ -5,7 +5,7 @@
 
 <div class="container">
     <div class="part">
-        <User name="TheHackerChampion"/>
+        <User name="Trialgamer"/>
         <User name="thepigcat76"/>
         <User name="TheNumber007"/>
     </div>
